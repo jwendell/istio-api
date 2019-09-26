@@ -1183,11 +1183,12 @@ message HTTPFaultInjection {
 // PortSelector specifies the number of a port to be used for
 // matching or selection for final routing.
 message PortSelector {
-  // Valid port number
-  uint32 number = 1;
-
-  reserved 2;
-  reserved "name";
+  oneof port {
+    // Valid port number
+    uint32 number = 1;
+    // $hide_from_docs
+    string name = 2;
+  }
 }
 
 // Percent specifies a percentage in the range of [0.0, 100.0].

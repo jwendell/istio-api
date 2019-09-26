@@ -9,12 +9,30 @@
       "istio.networking.v1alpha3.PortSelector": {
         "description": "PortSelector specifies the number of a port to be used for matching or selection for final routing.",
         "type": "object",
-        "properties": {
-          "number": {
-            "description": "Valid port number",
-            "type": "integer"
+        "oneOf": [
+          {
+            "required": [
+              "number"
+            ],
+            "properties": {
+              "number": {
+                "description": "Valid port number",
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "format": "string"
+              }
+            }
           }
-        }
+        ]
       },
       "istio.networking.v1alpha3.VirtualService": {
         "description": "Configuration affecting traffic routing.",
