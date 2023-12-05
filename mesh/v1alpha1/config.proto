@@ -1174,8 +1174,16 @@ message MeshConfig {
   // For ISTIO_MUTUAL TLS settings, use meshMTLS configuration.
   TLSConfig tls_defaults = 64;
 
+  message GatewayAPIConfig {
+    google.protobuf.BoolValue controllerMode = 1;
+    string defaultClassName = 2;
+    string controllerName = 3;
+  }
+  
+  GatewayAPIConfig gatewayAPI = 66;
+
   // $hide_from_docs
-  // Next available field number: 66
+  // Next available field number: 67
   reserved 1;
   reserved "mixer_check_server";
   reserved 2;

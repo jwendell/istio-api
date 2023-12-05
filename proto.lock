@@ -37476,6 +37476,11 @@
                 "id": 64,
                 "name": "tls_defaults",
                 "type": "TLSConfig"
+              },
+              {
+                "id": 66,
+                "name": "gatewayAPI",
+                "type": "GatewayAPIConfig"
               }
             ],
             "reserved_ids": [
@@ -38245,6 +38250,26 @@
                     "name": "cipher_suites",
                     "type": "string",
                     "is_repeated": true
+                  }
+                ]
+              },
+              {
+                "name": "GatewayAPIConfig",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "controllerMode",
+                    "type": "google.protobuf.BoolValue"
+                  },
+                  {
+                    "id": 2,
+                    "name": "defaultClassName",
+                    "type": "string"
+                  },
+                  {
+                    "id": 3,
+                    "name": "controllerName",
+                    "type": "string"
                   }
                 ]
               }
